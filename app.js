@@ -111,7 +111,7 @@ bot.dialog('/', [
         if (queuedMessage.img.length > 0) {
         recognIngred(session, queuedMessage.img[0].contentUrl);
         }else{
-            session.send("Hi, please send a picture of ingredent to get Awsome Drink Recipes!");
+            session.send("Hi, please send a picture of ingredient to get Awesome Drink Recipes!");
         }
     }
 
@@ -143,12 +143,12 @@ bot.dialog('/greeting', [
                 var ingred = data.Predictions[0].Tag;
                 session.send("Prob: "+data.Predictions[0].Probability);
                 if(data.Predictions[0].Probability>0.4){
-                    session.send("You want to search for some Awesome drink Recipe with ingredent: " + ingred+"!");
+                    session.send("You want to search for some Awesome drink Recipe with ingredient: " + ingred+"!");
                     // searchDrinks(session,ingred);
                     thisingred = ingred;
                     
                 }else{
-                    session.send("Sorry, Ingredent Not Found!");
+                    session.send("Sorry, Ingredient Not Found!");
                 }
            }
         })
@@ -206,10 +206,10 @@ bot.dialog('/searchDrink', [
                 var ingred = data.Predictions[0].Tag;
                 session.send("Prob: "+data.Predictions[0].Probability);
                 if(data.Predictions[0].Probability>0.4){
-                    session.send("You want to search for some Awesome drink Recipe with ingredent: " + ingred+"!");
+                    session.send("You want to search for some Awesome drink Recipe with ingredient: " + ingred+"!");
                     searchDrinks(session,ingred);
                 }else{
-                    session.send("Sorry, Ingredent Not Found!");
+                    session.send("Sorry, Ingredient Not Found!");
                 }
            }
         })
@@ -233,7 +233,7 @@ bot.dialog('/searchDrink', [
           cardList.push(new builder.HeroCard(session)
             .title(drink[i].strDrink)
             .subtitle(drink[i].strCategory)
-             .text('Ingredents: ' + drink[i].strIngredient1 + ' ' + drink[i].strMeasure1 + '\n' 
+             .text('Ingredients: ' + drink[i].strIngredient1 + ' ' + drink[i].strMeasure1 + '\n' 
                         + drink[i].strIngredient2 + ' ' + drink[i].strMeasure2 + '\n' 
                         + drink[i].strIngredient3 + ' ' + drink[i].strMeasure3 + '\n' 
                         + drink[i].strIngredient4 + ' ' + drink[i].strMeasure4 + '\n' 
