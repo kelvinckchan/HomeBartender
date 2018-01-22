@@ -205,7 +205,7 @@ bot.dialog('/searchDrink', [
             if( data.Predictions){
                 var ingred = data.Predictions[0].Tag;
                 session.send("Prob: "+data.Predictions[0].Probability);
-                if(data.Predictions[0].Probability>0.4){
+                if(data.Predictions[0].Probability>0){
                     session.send("You want to search for some Awesome drink Recipe with ingredient: " + ingred+"!");
                     searchDrinks(session,ingred);
                 }else{
